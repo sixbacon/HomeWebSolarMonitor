@@ -184,7 +184,7 @@ void watchForMessage()  {
           client.println("<circle cx=\"" + String(centreOffsetX)+ "\" cy=\"" + String(centreOffsetY)
                          + "\" r=\"" + String(outerR -1)
                          + "\" stroke=\"black\" stroke-width=\"1\" fill=\"black\" />");
-          if (value >(200.0/3.0)){  // have to select the correct arc quadrants to display, changeover at 50%
+          if (value >(200.0/3.0)){  // have to select the correct arc quadrants to display, changeover at 180 deg
             client.println("<path d=\"M"+String(xB)+","+String(yB-1)+" A" +String(outerR)+","+String(outerR)+" 0 1 1 "
                            +String(xC)+","+String(yC)+" L"+String(xD)+","+String(yD)
                            +" A"+String(innerR)+","+String(innerR)+" 0 0 1 "+String(xA)+","+String(yA)+" Z\" fill=\"green\"/>");
@@ -218,7 +218,7 @@ void watchForMessage()  {
         }   
         else {
           Serial.println("Not a valid message");
-          // send a a blank message so overwrites any message received previously
+          // send a blank message so overwrites any message received previously
           client.println("HTTP/1.1 200 OK");        // standard response saying request successfully received
           client.println("Content-Type: text/html");// standard header
           client.println("Connection: close");      // close connection after message sent
