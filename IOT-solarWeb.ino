@@ -246,7 +246,7 @@ void setup()
   Serial.begin(115200);                           // used for testing
   delay(10);
   Wire.begin(SDA,SCL);                            // set up I2C
-  Serial.println("ESP186 solar web 4");
+  Serial.println("ESP186 solar web");
   Serial.println("About to start WifI");
   startWIFI();                                    // start up wifi link
   setupWebServer();                               // start the web server
