@@ -31,14 +31,14 @@ float solcalib=1000.0/3000;                              // 1000/(count in full 
 // Create an SFE_TSL2561 object to access the sensor
 SFE_TSL2561 light;
 
-const float solarMax = 1000.0;                      // maximum solar radiation likely in kW m/m, max value on dashboard
+const float solarMax = 1000.0;                      // maximum solar radiation likely in W m/m, max value on dashboard
 
 void setup_solarirradiance() {
   boolean gain = 0;                              // Gain setting, 0 = X1, 1 = X16; solar sensor as in bright sun so use 0
   unsigned int sitime;                           // Integration time as read from sensor - solar sensor
   unsigned char time = 0;                        // time 13.7 milliseconds
    
-  // Initialize the SFE_TSL2561 library
+  // Initialize the TSL2561
   light.begin();
   // Get factory ID from solar sensor:
   unsigned char ID;
